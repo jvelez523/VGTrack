@@ -1,0 +1,185 @@
+body {
+  /*padding: 50px;*/
+  /*font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;*/
+  background-color: #13171b;
+  font-family: 'Oswald', sans-serif;
+}
+
+i.medium.material-icons {
+  font-size: 4rem;
+}
+
+
+/*<----------------Navbar CSS Start----------------->*/
+nav {
+  background-color: #ee6e7300 !important;
+  -webkit-box-shadow: none;
+	-moz-box-shadow: none;
+  box-shadow: none;
+  margin-top: 20px;
+}
+
+nav ul a {
+  font-size: 1.5rem;
+  display: flex;
+}
+
+nav ul a.btn {
+  font-size: 1.5rem;
+}
+
+nav i.material-icons {
+  display: inline-block;
+  padding-right: 7px;
+}
+
+nav .brand-logo {
+  font-size: 2.5rem;
+}
+
+.nav-wrapper .input-field input[type=search], nav form {
+  display: inline-flex;
+}
+
+nav .btn {
+  border-radius: 20px;
+  background-color: #1fb01f00;
+  box-shadow: none;
+}
+
+nav .btn:hover {
+  background-color: #1FB01F;
+  border: none;
+}
+
+input#search {
+  padding: .5rem;
+  background-color: #1fb01f00;
+  border-radius: 30px;
+  text-indent: 35px;
+  color: white;
+  transition: border .4s ease-in;
+}
+
+input#search:hover, input#search:active {
+  border: 1px solid white;
+}
+
+@media (min-width:961px) {
+  nav .brand-logo.center {
+    font-size: 4rem;
+}
+}
+
+
+/*<----------------Navbar CSS End----------------->*/
+
+
+
+/*<----------------Header CSS Start----------------->*/
+.header {
+  background-image: url("https://wallpapercave.com/wp/wp2548263.jpg");
+  height: 675px;
+  background-size: cover;
+  object-fit: cover;
+  position: absolute;
+  height: 650px;
+  width: 100%;
+  top: 0;
+  z-index: -1;
+  background-attachment: fixed;
+}
+
+.headeroverlay::before {
+  content: "";
+    display: block;
+    position: absolute;
+    z-index: 0;
+    pointer-events: none;
+    width: 100%;
+    top: 0;
+    left: 50%;
+    -webkit-transform: translateX(-50%);
+    transform: translateX(-50%);
+    height: 775px;
+    background-repeat: no-repeat;
+    background-image: linear-gradient(90deg,#14181d 0,rgba(20,24,29,.98556487) .97%,rgba(20,24,29,.9451312) 2.07833333%,rgba(20,24,29,.88300656) 3.29666667%,rgba(20,24,29,.80349854) 4.60166667%,rgba(20,24,29,.71091472) 5.96666667%,rgba(20,24,29,.60956268) 7.365%,rgba(20,24,29,.50375) 8.77166667%,rgba(20,24,29,.39778426) 10.16%,rgba(20,24,29,.29597303) 11.505%,rgba(20,24,29,.20262391) 12.78%,rgba(20,24,29,.12204446) 13.95833333%,rgba(20,24,29,.05854227) 15.01666667%,rgba(20,24,29,.01642493) 15.92833333%,rgba(20,24,29,0) 16.66666667%,rgba(20,24,29,0) 83.33333333%,rgba(20,24,29,.01642493) 84.07166667%,rgba(20,24,29,.05854227) 84.98333333%,rgba(20,24,29,.12204446) 86.04166667%,rgba(20,24,29,.20262391) 87.22%,rgba(20,24,29,.29597303) 88.495%,rgba(20,24,29,.39778426) 89.84%,rgba(20,24,29,.50375) 91.22833333%,rgba(20,24,29,.60956268) 92.635%,rgba(20,24,29,.71091472) 94.03333333%,rgba(20,24,29,.80349854) 95.39833333%,rgba(20,24,29,.88300656) 96.70333333%,rgba(20,24,29,.9451312) 97.92166667%,rgba(20,24,29,.98556487) 99.03%,#14181d),linear-gradient(0deg,#14181d 0,#14181d 21.48148148%,rgba(20,24,29,.98556487) 23.63703704%,rgba(20,24,29,.9451312) 26.1%,rgba(20,24,29,.88300656) 28.80740741%,rgba(20,24,29,.80349854) 31.70740741%,rgba(20,24,29,.71091472) 34.74074074%,rgba(20,24,29,.60956268) 37.84814815%,rgba(20,24,29,.50375) 40.97407407%,rgba(20,24,29,.39778426) 44.05925926%,rgba(20,24,29,.29597303) 47.04814815%,rgba(20,24,29,.20262391) 49.88148148%,rgba(20,24,29,.12204446) 52.5%,rgba(20,24,29,.05854227) 54.85185185%,rgba(20,24,29,.01642493) 56.87777778%,rgba(20,24,29,0) 58.51851852%);
+}
+
+.content {
+  padding-top: 400px;
+  text-align: center;
+  color: white;
+}
+
+/*<----------------Header CSS End----------------->*/
+
+/*<----------------Card CSS Start----------------->*/
+
+
+.cardshold {
+  margin: 50px 0px;
+}
+
+.cardimg {
+  background-image: url('https://upload.wikimedia.org/wikipedia/en/thumb/7/7e/Mortal_Kombat_11_cover_art.png/220px-Mortal_Kombat_11_cover_art.png')
+}
+
+.card-panel {
+  background-color: #445567;
+  font-size: 20px;
+  height: 244.65px;
+}
+
+.panel1:hover {
+  background-color: #00c030;
+}
+
+.panel2:hover {
+  background-color: #ee7000;
+}
+
+.panel3:hover {
+  background-color: #209cd4;
+}
+
+/*<----------------Card CSS End----------------->*/
+
+/*<----------------Footer CSS Start----------------->*/
+
+.page-footer {
+  background-color: #2B343F;
+}
+
+/*<----------------Footer CSS End----------------->*/
+
+/*<----------------Modal CSS Start----------------->*/
+
+
+.modal {
+max-height:100%;
+overflow:hidden;
+padding: 40px;
+border-radius: 10px;
+}
+
+input[type="submit"]{
+  width: 200px;
+ margin-top: 10px;
+}
+.modal-close{
+ position: absolute;
+ top:10px;
+ right:10px;
+ padding:0;
+ margin:0;
+}
+
+.lisub {
+  background-color: #1FB01F;
+}
+
+.loginbtn {
+  width: 200px;
+  margin: 5px 0px;
+}

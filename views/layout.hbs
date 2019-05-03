@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+    integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+  <link href="https://fonts.googleapis.com/css?family=Oswald" rel="stylesheet">
+  <script src="/javascripts/script.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/5.11.0/firebase.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.18.0/axios.js"></script>
+  <title>VGTrack - The Video Game Tracker</title>
+  <link rel="stylesheet" href="/stylesheets/style.css" />
+</head>
+
+<body>
+  <!--Navigation Bar-->
+    <!--Profile Dropdown Post-Login-->
+  <ul id="dropdown" class="dropdown-content">
+    <li><a href="#!">one</a></li>
+    <li><a href="#!">two</a></li>
+    <li class="divider"></li>
+    <li><a href="#!" id="logout">Log Out</a></li>
+  </ul>
+  <nav>
+    <div class="nav-wrapper navbar-fixed nav-wrapperbg">
+
+      <a href="#" class="brand-logo center"><i class="medium material-icons">gamepad</i>VGTrack</a>
+      <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+
+      <ul id="nav-mobile" class="left hide-on-med-and-down">
+        <li><a href="sass.html"><i class="small material-icons">home</i>Home</a></li>
+        <li><a href="badges.html"><i class="small material-icons">explore</i>Explore</a></li>
+      </ul>
+      <ul id="nav-mobile" class="right hide-on-med-and-down rightnav">
+        <a class="waves-effect waves-light btn modal-trigger" href="#loginmodal"><i
+            class="material-icons left">person_outline</i>Log In</a>
+
+        <form>
+          <div class="input-field">
+            <input id="search" type="search" required>
+            <label class="label-icon" for="search"><i class="material-icons">search</i></label>
+          </div>
+        </form>
+      </ul>
+    </div>
+  </nav>
+
+
+  <!--Mobile Sidenav-->
+  <ul class="sidenav" id="mobile-demo">
+    <li><a href="sass.html">Sass</a></li>
+    <li><a href="badges.html">Components</a></li>
+    <li><a href="collapsible.html">Javascript</a></li>
+    <li><a href="mobile.html">Mobile</a></li>
+  </ul>
+
+
+
+  {{{body}}}
+
+  <footer class="page-footer">
+    <div class="container">
+      <div class="row">
+        <div class="col l6 s12">
+          <h5 class="white-text">Footer Content</h5>
+          <p class="grey-text text-lighten-4">You can use rows and columns here to organize your footer content.</p>
+        </div>
+        <div class="col l4 offset-l2 s12">
+          <h5 class="white-text">Links</h5>
+          <ul>
+            <li><a class="grey-text text-lighten-3" href="#!">Link 1</a></li>
+            <li><a class="grey-text text-lighten-3" href="#!">Link 2</a></li>
+            <li><a class="grey-text text-lighten-3" href="#!">Link 3</a></li>
+            <li><a class="grey-text text-lighten-3" href="#!">Link 4</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="footer-copyright">
+      <div class="container">
+        © 2014 Copyright Text
+        <a class="grey-text text-lighten-4 right" href="#!">More Links</a>
+      </div>
+    </div>
+  </footer>
+
+
+
+  <!-- Login Modal -->
+  <div id="loginmodal" class="modal ">
+    <h5 class="modal-close">&#10005;</h5>
+    <div class="modal-content center">
+      <h4>Login Form</h4>
+      <br>
+
+      <form action="#" id="loginform">
+
+        <div class="input-field">
+          <i class="material-icons prefix">person</i>
+          <input type="text" id="username">
+          <label for="username">Display Name</label>
+        </div>
+        <br>
+
+        <div class="input-field">
+          <i class="material-icons prefix">email</i>
+          <input type="text" id="email">
+          <label for="email">Email</label>
+        </div>
+        <br>
+
+        <div class="input-field">
+          <i class="material-icons prefix">lock</i>
+          <input type="password" id="pass">
+          <label for="pass">Password</label>
+        </div>
+        <br>
+
+        <div class="btn white darken-4 col s10 m4 btn-large loginbtn">
+          <a type="submit" id="googlesignin" style="text-transform:none">
+            Sign-Up with Google
+          </a>
+        </div>
+        <br>
+        <div class="btn white darken-4 col s10 m4 btn-large loginbtn">
+          <a type="submit" id="facebooksignin" style="text-transform:none">
+            Sign-Up with Facebook
+          </a>
+        </div>
+        <br>
+        <input type="submit" id="emailsignin" value="Login" class="btn btn-large lisub">
+
+      </form>
+    </div>
+  </div>
+  <script src="/javascripts/auth.js"></script>
+</html>
