@@ -12,71 +12,47 @@
     </div>
   </div>
   <div class="titletext">
-  <h3>Popular Games</h3>
+    <h3>Popular Games</h3>
   </div>
-  <div class="cardwrap cardshold">
-    <div class="row">
-      <div class="col s12 m3">
-        <div class="card cardimg">
-          <div class="card-image">
-            <img
-              src="https://upload.wikimedia.org/wikipedia/en/thumb/7/7e/Mortal_Kombat_11_cover_art.png/220px-Mortal_Kombat_11_cover_art.png">
-          </div>
-        </div>
-      </div>
-      <div class="col s12 m3">
-        <div class="card cardimg">
-          <div class="card-image">
-            <img
-              src="https://upload.wikimedia.org/wikipedia/en/thumb/7/7e/Mortal_Kombat_11_cover_art.png/220px-Mortal_Kombat_11_cover_art.png">
-          </div>
-        </div>
-      </div>
-      <div class="col s12 m3">
-        <div class="card cardimg">
-          <div class="card-image">
-            <img
-              src="https://upload.wikimedia.org/wikipedia/en/thumb/7/7e/Mortal_Kombat_11_cover_art.png/220px-Mortal_Kombat_11_cover_art.png">
-          </div>
-        </div>
-      </div>
-      <div class="col s12 m3">
-        <div class="card cardimg">
-          <div class="card-image">
-            <img
-              src="https://upload.wikimedia.org/wikipedia/en/thumb/7/7e/Mortal_Kombat_11_cover_art.png/220px-Mortal_Kombat_11_cover_art.png">
-          </div>
+  <div class="row popgame">
+    {{#each game}}
+    <div class="col s12 m3">
+      <div class="card cardimg homegame">
+        <div class="card-image">
+          <img src="https://images.igdb.com/igdb/image/upload/t_cover_big_2x/{{this.cover.image_id}}.jpg">
         </div>
       </div>
     </div>
+    {{/each}}
   </div>
+
   <div class="titletext">
     <h3>Features</h3>
   </div>
-  <div class="row infopanelswrap">
-      <div class="col s12 m4">
-        <div class="card-panel panel1">
-          <p><i class="material-icons medium">videogame_asset</i></p>
-          <span class="white-text">
-            Kepp track of games you've played, want to play, or have beaten.
-          </span>
-        </div>
-      </div>
-      <div class="col s12 m4">
-        <div class="card-panel panel2">
-          <p><i class="far fa-heart medium"></i></p>
-          <span class="white-text">
-            Find out which games are worth playing from both users and critics.
-          </span>
-        </div>
-      </div>
-      <div class="col s12 m4">
-        <div class="card-panel panel3">
-          <p><i class="far fa-list-alt medium"></i></p>
-          <span class="white-text">
-            Create lists to organize your games, and find lists others have created.
-          </span>
-        </div>
+  <div class="row infopanelswrap homepanel">
+    <div class="col s12 m4">
+      <div class="card-panel panel1">
+        <p><i class="material-icons medium">videogame_asset</i></p>
+        <span class="white-text">
+          Kepp track of games you've played, want to play, or have beaten.
+        </span>
       </div>
     </div>
+    <div class="col s12 m4">
+      <div class="card-panel panel2">
+        <p><i class="far fa-heart medium"></i></p>
+        <span class="white-text">
+          Find out which games are worth playing from both users and critics.
+        </span>
+      </div>
+    </div>
+    <div class="col s12 m4">
+      <div class="card-panel panel3">
+        <p><i class="far fa-list-alt medium"></i></p>
+        <span class="white-text">
+          Create lists to organize your games, and find lists others have created.
+        </span>
+      </div>
+    </div>
+  </div>
 </div>

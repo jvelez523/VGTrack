@@ -54,7 +54,7 @@ nav .btn:hover {
 
 input#search {
   padding: .5rem;
-  background-color: #1fb01f00;
+  background-color: #ffffff33;
   border-radius: 30px;
   text-indent: 35px;
   color: white;
@@ -69,6 +69,15 @@ input#search:hover, input#search:active {
   nav .brand-logo.center {
     font-size: 4rem;
 }
+  .homegame .card-image img {
+    height: 330.9px;
+  }
+}
+
+@media (max-width : 375px) {
+  .expl .card-image img {
+    height: 122px !important;
+  }
 }
 
 
@@ -121,8 +130,13 @@ input#search:hover, input#search:active {
   margin: 50px 0px;
 }
 
-.cardimg {
-  background-image: url('https://upload.wikimedia.org/wikipedia/en/thumb/7/7e/Mortal_Kombat_11_cover_art.png/220px-Mortal_Kombat_11_cover_art.png')
+.homegame .card-image img{
+  border-radius: 5px
+}
+
+.homegame {
+  border-radius: 5px;
+  background-color: #fff0
 }
 
 .card-panel {
@@ -141,6 +155,10 @@ input#search:hover, input#search:active {
 
 .panel3:hover {
   background-color: #209cd4;
+}
+
+.homepanel {
+  padding-bottom: 50px;
 }
 
 /*<----------------Card CSS End----------------->*/
@@ -183,3 +201,68 @@ input[type="submit"]{
   width: 200px;
   margin: 5px 0px;
 }
+/*<----------------Modal CSS End----------------->*/
+
+
+/*<----------------Explore CSS Start----------------->*/
+
+.titletext {
+  text-align: center;
+  color: white;
+  padding: 50px 0px;
+}
+
+
+
+.pagehead {
+    text-align: center;
+    color: white;
+    padding: 50px 0px;
+    background-image: url(https://stmed.net/sites/default/files/the-legend-of-zelda%3A-breath-of-the-wild-hd-wallpapers-33783-8252657.jpg);
+    background-size: cover;
+    background-position: center;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 400px;
+    padding-top : 150px;
+    box-shadow: inset 0 0 0 1000px rgba(0,0,0,.2);
+}
+
+.explorecont {
+  padding-top: 300px;
+}
+
+
+/*Image Overlay CSS*/
+.overlay {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 100%;
+  width: 100%;
+  opacity: 0;
+  transition: .5s ease;
+  background-color: #12161aa6;
+}
+
+.card-image:hover .overlay {
+  opacity: 1;
+}
+
+.text {
+  color: white;
+  font-size: 1.5rem;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+/*----------*/
+
+/*<----------------Explore CSS End----------------->*/

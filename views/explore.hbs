@@ -1,0 +1,56 @@
+<div class="pagehead">
+  <h1>Explore</h1>
+</div>
+<div class="container explorecont">
+  <div class="explorepop titletext">
+    <h1>Popular Games</h1>
+  </div>
+  <div class="row popgame">
+    {{#each popgame}}
+    <div class="col s4 m3">
+      <div class="card cardimg homegame expl">
+        <div class="card-image">
+          <img src="https://images.igdb.com/igdb/image/upload/t_cover_big_2x/{{this.cover.image_id}}.jpg">
+          <div class="overlay">
+            <div class="text">{{this.name}}</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    {{/each}}
+  </div>
+  <div class="explorepop titletext">
+    <h1>Newly Released</h1>
+  </div>
+  <div class="row popgame">
+    {{#each recentgames}}
+    <div class="col s4 m3">
+      <div class="card cardimg homegame expl">
+        <div class="card-image">
+          <img src="https://images.igdb.com/igdb/image/upload/t_cover_big_2x/{{this.game.cover.image_id}}.jpg">
+          <div class="overlay">
+            <div class="text">{{this.game.name}}</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    {{/each}}
+  </div>
+  <div class="explorepop titletext">
+    <h1>Coming Soon</h1>
+  </div>
+  <div class="row popgame">
+    {{#each soongames}}
+    <div class="col s4 m3">
+      <div class="card cardimg homegame expl">
+        <div class="card-image">
+          <img src="https://images.igdb.com/igdb/image/upload/t_cover_big_2x/{{this.game.cover.image_id}}.jpg">
+          <div class="overlay">
+            <div class="text">{{this.game.name}}</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    {{/each}}
+  </div>
+</div>

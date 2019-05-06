@@ -1,5 +1,6 @@
 var googleProvider = new firebase.auth.GoogleAuthProvider();
 var facebookProvider = new firebase.auth.FacebookAuthProvider();
+
 //Initialize Firebase Auth
 const firebaseconfig = {
   apiKey: "AIzaSyDCAEgf8Yx1CMWZvnD3b8ycnmkllg8hF0g",
@@ -24,10 +25,20 @@ document.querySelector("#emailsignin").addEventListener("click", () => {
     .then(user => {
       var user = firebase.auth().currentUser;
 
-      user.updateProfile({
-        displayName: name
-      });
-      location.reload();
+  
+      if(result.additionalUserInfo.isNewUser){
+        user.updateProfile({
+          displayName: name
+        });
+        axios.post("/signup",result)
+        .then((user) => {
+          console.log(user)
+        })
+        .catch(err => {
+          console.log(err)
+        })
+      }
+      //location.reload();
       console.log("User has logged in", user);
     })
     .catch(function(error) {
@@ -44,6 +55,15 @@ document.querySelector("#googlesignin").addEventListener("click", () => {
     .auth()
     .signInWithPopup(googleProvider)
     .then(result => {
+      if(result.additionalUserInfo.isNewUser){
+      axios.post("/signup",result)
+      .then((user) => {
+        console.log(user)
+      })
+      .catch(err => {
+        console.log(err)
+      })
+    }
       console.log("user has logged in", result);
     });
 });
@@ -53,6 +73,15 @@ document.querySelector("#facebooksignin").addEventListener("click", () => {
     .auth()
     .signInWithPopup(facebookProvider)
     .then(result => {
+      if(result.additionalUserInfo.isNewUser){
+        axios.post("/signup",result)
+        .then((user) => {
+          console.log(user)
+        })
+        .catch(err => {
+          console.log(err)
+        })
+      }
       console.log("user has logged in", result);
     });
 });

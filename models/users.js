@@ -4,8 +4,9 @@ const Schema   = mongoose.Schema;
 const userSchema = new Schema({
   firstname: String,
   lastname: String,
-  username: String,
-  password: String,
+  displayName: String,
+  uid: String,
+  email: String,
   favoritegames: Array,
   profileimg: { type: String, default: '/image/defaultprofile.png' },
   
