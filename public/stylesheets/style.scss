@@ -224,13 +224,14 @@ input[type="submit"]{
     position: absolute;
     top: 0;
     width: 100%;
-    height: 400px;
-    padding-top : 150px;
+    height: 650px;
+    padding-top : 180px;
     box-shadow: inset 0 0 0 1000px rgba(0,0,0,.2);
+    z-index: -1;
 }
 
 .explorecont {
-  padding-top: 300px;
+  padding-top: 600px;
 }
 
 
@@ -266,3 +267,84 @@ input[type="submit"]{
 /*----------*/
 
 /*<----------------Explore CSS End----------------->*/
+
+
+.pagehead::before {
+  content: "";
+  display: block;
+  position: absolute;
+  z-index: -1;
+  pointer-events: none;
+  width: 150%;
+  top: 0;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+  transform: translateX(-50%);
+  height: 775px;
+  background-repeat: no-repeat;
+  background-image: linear-gradient(90deg, #14181d 0, rgba(20, 24, 29, 0.985565) 0.97%, rgba(20, 24, 29, 0.945131) 2.07833%, rgba(20, 24, 29, 0.883007) 3.29667%, rgba(20, 24, 29, 0.803499) 4.60167%, rgba(20, 24, 29, 0.710915) 5.96667%, rgba(20, 24, 29, 0.609563) 7.365%, rgba(20, 24, 29, 0.50375) 8.77167%, rgba(20, 24, 29, 0.397784) 10.16%, rgba(20, 24, 29, 0.295973) 11.505%, rgba(20, 24, 29, 0.202624) 12.78%, rgba(20, 24, 29, 0.122044) 13.95833%, rgba(20, 24, 29, 0.0585423) 15.01667%, rgba(20, 24, 29, 0.0164249) 15.92833%, rgba(20, 24, 29, 0) 16.66667%, rgba(20, 24, 29, 0) 83.33333%, rgba(20, 24, 29, 0.0164249) 84.07167%, rgba(20, 24, 29, 0.0585423) 84.98333%, rgba(20, 24, 29, 0.122044) 86.04167%, rgba(20, 24, 29, 0.202624) 87.22%, rgba(20, 24, 29, 0.295973) 88.495%, rgba(20, 24, 29, 0.397784) 89.84%, rgba(20, 24, 29, 0.50375) 91.22833%, rgba(20, 24, 29, 0.609563) 92.635%, rgba(20, 24, 29, 0.710915) 94.03333%, rgba(20, 24, 29, 0.803499) 95.39833%, rgba(20, 24, 29, 0.883007) 96.70333%, rgba(20, 24, 29, 0.945131) 97.92167%, rgba(20, 24, 29, 0.985565) 99.03%, #14181d), linear-gradient(0deg, #14181d 0, #14181d 21.48148%, rgba(20, 24, 29, 0.985565) 23.63704%, rgba(20, 24, 29, 0.945131) 26.1%, rgba(20, 24, 29, 0.883007) 28.80741%, rgba(20, 24, 29, 0.803499) 31.70741%, rgba(20, 24, 29, 0.710915) 34.74074%, rgba(20, 24, 29, 0.609563) 37.84815%, rgba(20, 24, 29, 0.50375) 40.97407%, rgba(20, 24, 29, 0.397784) 44.05926%, rgba(20, 24, 29, 0.295973) 47.04815%, rgba(20, 24, 29, 0.202624) 49.88148%, rgba(20, 24, 29, 0.122044) 52.5%, rgba(20, 24, 29, 0.0585423) 54.85185%, rgba(20, 24, 29, 0.0164249) 56.87778%, rgba(20, 24, 29, 0) 58.51852%);
+}
+
+
+
+
+/*<----------------Game Page----------------->*/
+.gameimg {
+  width: 250px;
+  border-radius: 20px;
+  height: auto;
+}
+
+
+.gamecov {
+    text-align: center;
+    padding-top: 350px;
+}
+
+.desctext {
+  color: white;
+  padding: 30px 0px;
+}
+
+.platformmark {
+  text-align: center;
+  margin: 30px 0px;
+}
+
+.platbut {
+  background-color: transparent;
+  border: 1px solid #1FB01F;
+  border-radius: 20px;
+  margin: 10px;
+}
+
+.gamescreenhold {
+  text-align: center;
+}
+
+.simgameshold {
+  text-align: center;
+}
+
+/*<----------------Game Page----------------->*/
+
+/*<----------------Dashboard Page----------------->*/
+
+#dashTabs {
+  //width: 60%;
+  text-align: center;
+  //margin-top: 50px;
+  margin-bottom: 50px;
+  border-radius: 10px;
+  background-color: #303C48
+}
+
+.tabs .tab a {
+  color: #99AABB;
+}
+
+.dashHeader {
+  text-align: center;
+  color: white;
+  padding: 50px 0px;
+}

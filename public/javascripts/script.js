@@ -9,5 +9,6 @@ document.addEventListener('DOMContentLoaded', () => {
 $(document).ready(function(){
   $('.modal').modal();
   $('.sidenav').sidenav();
+  $('.tabs').tabs();
 });
 

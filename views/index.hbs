@@ -16,6 +16,7 @@
   </div>
   <div class="row popgame">
     {{#each game}}
+    <a href="/gamepage?game_id={{this.id}}">
     <div class="col s12 m3">
       <div class="card cardimg homegame">
         <div class="card-image">
@@ -23,6 +24,7 @@
         </div>
       </div>
     </div>
+    </a>
     {{/each}}
   </div>
 

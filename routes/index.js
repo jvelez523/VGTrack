@@ -12,7 +12,7 @@ currentDate = Math.floor(Date.now() / 1000)
 router.get("/", (req, res, next) => {
   axios({
     url:
-      "https://api-v3.igdb.com/games?fields=name,popularity,cover,cover.url,cover.image_id&order=popularity:desc&expand=cover&limit=4&filter[release_dates.platform][any]=48,49,130",
+      "https://api-v3.igdb.com/games?fields=name,popularity,cover,cover.url,cover.image_id,slug&order=popularity:desc&expand=cover&limit=4&filter[release_dates.platform][any]=48,49,130",
     method: "POST",
     headers: {
       Accept: "application/json",
@@ -30,13 +30,12 @@ router.get("/", (req, res, next) => {
 
 });
 
-
 /*Get Explore Page*/
 router.get("/explore", (req, res, next) => {
   axios.all([
     axios({
         url:
-          "https://api-v3.igdb.com/games?fields=cover.image_id,name&order=popularity:desc&expand=cover,genres&limit=16&filter[release_dates.platform][any]=48,49,130",
+          "https://api-v3.igdb.com/games?fields=cover.image_id,name&order=popularity:desc&expand=cover&limit=16&filter[release_dates.platform][any]=48,49,130",
         method: "POST",
         headers: {
           Accept: "application/json",
@@ -69,6 +68,34 @@ router.get("/explore", (req, res, next) => {
   .catch(err => {
     console.log(err)
   });
+})
+
+
+/*Get Dashboard Page*/
+router.get("/dashboard", (req, res, next) => {
+  res.render("dash")
+})
+
+/*Get Character Page*/
+router.get("/gamepage", (req, res, next) => {
+  var id = req.query.game_id
+  axios({
+    url:
+      `https://api-v3.igdb.com/games/${id}?fields=name,screenshots.image_id,cover.image_id,summary,platforms.name,similar_games.cover,similar_games.cover.image_id&expand=screenshots,screenshots.image_id,cover,platforms,similar_games,similar_games.cover`,
+    method: "GET",
+    headers: {
+      Accept: "application/json",
+      "user-key": "1fda64715ca1971db849c092ce825dbf"
+    },
+    data: "fields name artworks;"
+  })
+    .then(response => {
+      res.render("gamepage", { game: response.data[0] });
+      console.log(response.data[0]);
+    })
+    .catch(err => {
+      console.error(err);
+    });
 })
 
 router.use("/", authroute);

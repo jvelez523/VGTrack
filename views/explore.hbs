@@ -1,5 +1,5 @@
 <div class="pagehead">
-  <h1>Explore</h1>
+  <h1 class="Header">Explore</h1>
 </div>
 <div class="container explorecont">
   <div class="explorepop titletext">
@@ -11,9 +11,11 @@
       <div class="card cardimg homegame expl">
         <div class="card-image">
           <img src="https://images.igdb.com/igdb/image/upload/t_cover_big_2x/{{this.cover.image_id}}.jpg">
+          <a href="/gamepage?game_id={{this.id}}">
           <div class="overlay">
             <div class="text">{{this.name}}</div>
           </div>
+          </a>
         </div>
       </div>
     </div>
@@ -28,9 +30,11 @@
       <div class="card cardimg homegame expl">
         <div class="card-image">
           <img src="https://images.igdb.com/igdb/image/upload/t_cover_big_2x/{{this.game.cover.image_id}}.jpg">
+          <a href="/gamepage?game_id={{this.game.id}}">
           <div class="overlay">
             <div class="text">{{this.game.name}}</div>
           </div>
+          </a>
         </div>
       </div>
     </div>
@@ -45,9 +49,11 @@
       <div class="card cardimg homegame expl">
         <div class="card-image">
           <img src="https://images.igdb.com/igdb/image/upload/t_cover_big_2x/{{this.game.cover.image_id}}.jpg">
+          <a href="/gamepage?game_id={{this.game.id}}">
           <div class="overlay">
             <div class="text">{{this.game.name}}</div>
           </div>
+          </a>
         </div>
       </div>
     </div>

@@ -1,0 +1,48 @@
+<div class="pagehead"
+  style="background-image: url(https://images.igdb.com/igdb/image/upload/t_1080p/{{game.screenshots.0.image_id}}.jpg)">
+  <h1>{{game.name}}</h1>
+</div>
+<div class="container">
+  <div class="gamecov">
+    <img class="gameimg z-depth-3"
+      src="https://images.igdb.com/igdb/image/upload/t_cover_big_2x/{{game.cover.image_id}}.jpg">
+  </div>
+  <div class="platformmark row">
+    {{#each game.platforms}}
+    <div class="btn-small platbut">{{this.name}}</div>
+    {{/each}}
+  </div>
+  <div class="desctext">
+    <p class="flow-text">{{game.summary}}</p>
+  </div>
+  <div class="gamescreenhold">
+    <h2 class="white-text">Screenshots</h2>
+    <div class="row">
+      {{#each game.screenshots}}
+      <div class="col s6 m4">
+        <div class="card cardimg">
+          <div class="card-image">
+            <img src="https://images.igdb.com/igdb/image/upload/t_screenshot_med_2x/{{this.image_id}}.jpg">
+          </div>
+        </div>
+      </div>
+      {{/each}}
+    </div>
+  </div>
+  <div class="simgameshold">
+    <h2 class="white-text">Similair Games</h2>
+    <div class="row">
+      {{#each game.similar_games}}
+      <a href="/gamepage?game_id={{this.id}}">
+        <div class="col s4 m3">
+          <div class="card cardimg homegame expl">
+            <div class="card-image">
+              <img src="https://images.igdb.com/igdb/image/upload/t_cover_big_2x/{{this.cover.image_id}}.jpg">
+            </div>
+          </div>
+        </div>
+      </a>
+      {{/each}}
+    </div>
+  </div>
+</div>
