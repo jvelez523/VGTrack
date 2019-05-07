@@ -1,14 +1,84 @@
-
 <div class="container">
   <div class="dashHeader">
-  <h3>Hello, User</h3>
-</div>
-<ul id="dashTabs" class="tabs">
-  <li class="tab col s3"><a href="#test-swipe-1">Test 1</a></li>
-  <li class="tab col s3"><a class="active" href="#test-swipe-2">Test 2</a></li>
-  <li class="tab col s3"><a href="#test-swipe-3">Test 3</a></li>
-</ul>
-<div id="test-swipe-1" class="col s12 blue">Test 1</div>
-<div id="test-swipe-2" class="col s12 red">Test 2</div>
-<div id="test-swipe-3" class="col s12 green">Test 3</div>
+    <span><img src="/images/defaultprofile.png" class="circle responsive-img profiledash"></span>
+    <h3>Hello, User</h3>
+  </div>
+  <ul id="dashTabs" class="tabs">
+    <li class="tab col s3"><a href="#swipe-1">Want to Play</a></li>
+    <li class="tab col s3"><a class="active" href="#swipe-2">Playing</a></li>
+    <li class="tab col s3"><a href="#swipe-3">Beaten</a></li>
+    <li class="tab col s3"><a href="#swipe-4">Backlog</a></li>
+  </ul>
+  <div id="swipe-1" class="col s12 blue favcol">
+    <div class="row popgame">
+      {{#each popgame}}
+      <div class="col s4 m3">
+        <div class="card cardimg homegame expl">
+          <div class="card-image">
+            <img src="https://images.igdb.com/igdb/image/upload/t_cover_big_2x/{{this.cover.image_id}}.jpg">
+            <a href="/gamepage?game_id={{this.id}}">
+              <div class="overlay">
+                <div class="text">{{this.name}}</div>
+              </div>
+            </a>
+          </div>
+        </div>
+      </div>
+      {{/each}}
+    </div>
+  </div>
+  <div id="swipe-2" class="col s12 red favcol">
+    <div class="row popgame">
+      {{#each popgame}}
+      <div class="col s4 m3">
+        <div class="card cardimg homegame expl">
+          <div class="card-image">
+            <img src="https://images.igdb.com/igdb/image/upload/t_cover_big_2x/{{this.cover.image_id}}.jpg">
+            <a href="/gamepage?game_id={{this.id}}">
+              <div class="overlay">
+                <div class="text">{{this.name}}</div>
+              </div>
+            </a>
+          </div>
+        </div>
+      </div>
+      {{/each}}
+    </div>
+  </div>
+  <div id="swipe-3" class="col s12 green favcol">
+    <div class="row popgame">
+      {{#each popgame}}
+      <div class="col s4 m3">
+        <div class="card cardimg homegame expl">
+          <div class="card-image">
+            <img src="https://images.igdb.com/igdb/image/upload/t_cover_big_2x/{{this.cover.image_id}}.jpg">
+            <a href="/gamepage?game_id={{this.id}}">
+              <div class="overlay">
+                <div class="text">{{this.name}}</div>
+              </div>
+            </a>
+          </div>
+        </div>
+      </div>
+      {{/each}}
+    </div>
+  </div>
+  <div id="swipe-4" class="col s12 orange favcol">
+    <div class="row popgame">
+      {{#each popgame}}
+      <div class="col s4 m3">
+        <div class="card cardimg homegame expl">
+          <div class="card-image">
+            <img src="https://images.igdb.com/igdb/image/upload/t_cover_big_2x/{{this.cover.image_id}}.jpg">
+            <a href="/gamepage?game_id={{this.id}}">
+              <div class="overlay">
+                <div class="text">{{this.name}}</div>
+              </div>
+            </a>
+          </div>
+        </div>
+      </div>
+      {{/each}}
+    </div>
+  </div>
 </div>

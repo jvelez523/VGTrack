@@ -10,5 +10,6 @@ $(document).ready(function(){
   $('.modal').modal();
   $('.sidenav').sidenav();
   $('.tabs').tabs();
+  $('.materialboxed').materialbox();
 });
 
