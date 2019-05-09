@@ -19,4 +19,5 @@ $(document).ready(function() {
   $(".editbtn").click(function() {
     $(".minusbtn").toggleClass("scale-out");
   });
+  
 });

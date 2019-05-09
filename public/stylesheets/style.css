@@ -319,4 +319,10 @@ input[type="submit"] {
   bottom: 10px;
   right: 5px; }
 
+.logbut {
+  color: rgba(0, 0, 0, 0.87); }
+
+.logform {
+  text-align: center; }
+
 /*# sourceMappingURL=style.css.map */
