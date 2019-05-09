@@ -22,7 +22,7 @@ document.querySelector("#emailsignin").addEventListener("click", () => {
   firebase
     .auth()
     .createUserWithEmailAndPassword(email, password)
-    .then(user => {
+    .then(result => {
       var user = firebase.auth().currentUser;
 
       if (result.additionalUserInfo.isNewUser) {
@@ -124,17 +124,10 @@ firebase.auth().onAuthStateChanged(function(user) {
     $(".modal").modal("close");
 
     let userloggedin = document.querySelector(".rightnav");
-    userloggedin.innerHTML = `<li><a class="dropdown-trigger" href="#!" data-target="dropdown">Hi, ${displayName}<i class="material-icons right">arrow_drop_down</i></a></li>
-
-    <form action="/search" method="post">
-      <div class="input-field">
-        <input id="search" type="search" required="" name="search">
-        <label class="label-icon" for="search"><i class="material-icons">search</i></label>
-      </div>
-    </form>`;
+    userloggedin.innerHTML = `<li><a class="dropdown-trigger" href="#!" data-target="dropdown">Hi, ${displayName}<i class="material-icons right">arrow_drop_down</i></a></li>`;
     $(".dropdown-trigger").dropdown();
 
-    document.querySelector(".logbutton").style.display = "none"
+    //document.querySelector(".logbutton").style.display = "none"
     let sidenavloggedin = document.querySelector(".sidenav")
     sidenavloggedin.innerHTML = `  
     <li><a href="/"><i class="small material-icons">home</i>Home</a></li>
