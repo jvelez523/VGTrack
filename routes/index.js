@@ -112,9 +112,20 @@ router.get("/dashboard", authMiddleware.noCurrentUser, (req, res, next) => {
   let beatenarr = [];
   let backlogarr = [];
 
-  //wanting to play add
   User.findById(req.cookies.currentuser._id).then(user => {
     let promises = [];
+
+    for (let i = 0; i < user.backlog.length; i++) {
+      promises.push(
+        glist.findById(user.backlog[i]._id).then(game => {
+          backlogarr.push(game);
+          console.log(game);
+          console.log("this is the array ======>", beatenarr);
+          return game + " yo!!!!";
+        })
+      );
+    }
+
     for (let i = 0; i < user.wtpgames.length; i++) {
       promises.push(
         glist.findById(user.wtpgames[i]._id).then(game => {
@@ -126,53 +137,30 @@ router.get("/dashboard", authMiddleware.noCurrentUser, (req, res, next) => {
       );
     }
 
-    //playing add
-    User.findById(req.cookies.currentuser._id).then(user => {
-      let promises2 = [];
-      for (let i = 0; i < user.playing.length; i++) {
-        promises2.push(
-          glist.findById(user.playing[i]._id).then(game => {
-            playingarr.push(game);
-            console.log(game);
-            console.log("this is the array ======>", playingarr);
-            return game + " yo!!!!";
-          })
-        );
-      }
-    });
+    for (let i = 0; i < user.beaten.length; i++) {
+      promises.push(
+        glist.findById(user.beaten[i]._id).then(game => {
+          beatenarr.push(game);
+          console.log(game);
+          console.log("this is the array ======>", beatenarr);
+          return game + " yo!!!!";
+        })
+      );
+    }
 
-    //beaten add
-    User.findById(req.cookies.currentuser._id).then(user => {
-      let promises3 = [];
-      for (let i = 0; i < user.beaten.length; i++) {
-        promises3.push(
-          glist.findById(user.beaten[i]._id).then(game => {
-            beatenarr.push(game);
-            console.log(game);
-            console.log("this is the array ======>", beatenarr);
-            return game + " yo!!!!";
-          })
-        );
-      }
-    });
-
-    //backlog add
-    User.findById(req.cookies.currentuser._id).then(user => {
-      let promises4 = [];
-      for (let i = 0; i < user.backlog.length; i++) {
-        promises4.push(
-          glist.findById(user.backlog[i]._id).then(game => {
-            backlogarr.push(game);
-            console.log(game);
-            console.log("this is the array ======>", beatenarr);
-            return game + " yo!!!!";
-          })
-        );
-      }
-    });
+    for (let i = 0; i < user.playing.length; i++) {
+      promises.push(
+        glist.findById(user.playing[i]._id).then(game => {
+          playingarr.push(game);
+          console.log(game);
+          console.log("this is the array ======>", playingarr);
+          return game + " yo!!!!";
+        })
+      );
+    }
 
     Promise.all(promises).then(function(values) {
-      console.log("This is the promise results", values)
+      console.log("This is the promise results", values);
       res.render("dash", {
         currentUser: req.cookies.currentuser,
         wtp: wtparr,
@@ -182,7 +170,6 @@ router.get("/dashboard", authMiddleware.noCurrentUser, (req, res, next) => {
       });
     });
   });
-
   console.log("This is the array out of loop =========>", wtparr);
 });
 

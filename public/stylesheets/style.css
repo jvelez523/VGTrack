@@ -72,6 +72,9 @@ input#search:active {
   .srchimg .card-image img {
     height: 165px !important; } }
 
+#googlesignin, #facebooksignin {
+  -webkit-appearance: none; }
+
 /*<----------------Navbar CSS End----------------->*/
 /*<----------------Header CSS Start----------------->*/
 .header {
