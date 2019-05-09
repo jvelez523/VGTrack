@@ -1,6 +1,6 @@
 var googleProvider = new firebase.auth.GoogleAuthProvider();
 var facebookProvider = new firebase.auth.FacebookAuthProvider();
-
+// require('dotenv').config()
 //Initialize Firebase Auth
 const firebaseconfig = {
   apiKey: "AIzaSyDCAEgf8Yx1CMWZvnD3b8ycnmkllg8hF0g",
@@ -14,40 +14,6 @@ firebase.initializeApp(firebaseconfig);
 
 //<---------Sign-Up Code----------->
 
-//Email
-document.querySelector("#emailsignin").addEventListener("click", () => {
-  let email = document.querySelector("#email").value;
-  let password = document.querySelector("#pass").value;
-  let name = document.querySelector("#username").value;
-  firebase
-    .auth()
-    .createUserWithEmailAndPassword(email, password)
-    .then(result => {
-      var user = firebase.auth().currentUser;
-
-      if (result.additionalUserInfo.isNewUser) {
-        user.updateProfile({
-          displayName: name
-        });
-        axios
-          .post("/signup", result)
-          .then(user => {
-            console.log(user);
-          })
-          .catch(err => {
-            console.log(err);
-          });
-      }
-      //location.reload();
-      console.log("User has logged in", user);
-    })
-    .catch(function(error) {
-      // Handle Errors here.
-      var errorCode = error.code;
-      var errorMessage = error.message;
-      // ...
-    });
-});
 
 // Google Signin
 document.querySelector("#googlesignin").addEventListener("click", () => {
@@ -112,6 +78,8 @@ document.querySelector("#facebooksignin").addEventListener("click", () => {
 //When Logged in Functions
 firebase.auth().onAuthStateChanged(function(user) {
   if (user) {
+    console.log("the user info ----- ",user);
+    
     // User is signed in.
     var displayName = user.displayName;
     var email = user.email;
@@ -124,7 +92,14 @@ firebase.auth().onAuthStateChanged(function(user) {
     $(".modal").modal("close");
 
     let userloggedin = document.querySelector(".rightnav");
-    userloggedin.innerHTML = `<li><a class="dropdown-trigger" href="#!" data-target="dropdown">Hi, ${displayName}<i class="material-icons right">arrow_drop_down</i></a></li>`;
+    userloggedin.innerHTML = `<li><a class="dropdown-trigger" href="#!" data-target="dropdown">Hi, ${displayName}<i class="material-icons right">arrow_drop_down</i></a></li>
+    <li><form action="/search" method="post">
+    <div class="input-field">
+      <input id="search" type="search" required>
+      <label class="label-icon" for="search"><i class="material-icons">search</i></label>
+    </div>
+  </form></li>
+    `;
     $(".dropdown-trigger").dropdown();
 
     //document.querySelector(".logbutton").style.display = "none"
@@ -133,6 +108,7 @@ firebase.auth().onAuthStateChanged(function(user) {
     <li><a href="/"><i class="small material-icons">home</i>Home</a></li>
     <li><a href="/explore"><i class="small material-icons">explore</i>Explore</a></li>
     <li><a href="/dashboard"><i class="small material-icons">dashboard</i>Dashboard</a></li>
+    <li><a href="/searchmob"><i class="small material-icons">search</i>Search</a></li>
   `
     // <li><form class="logform" action="logout" method="POST"><button onclick="this.parentNode.submit()" href="#!" id="logoutmob" class="logoutmobile btn-small platbut logbut">Log Out</button></form></li>
   } else {

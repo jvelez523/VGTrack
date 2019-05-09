@@ -176,6 +176,7 @@ router.get("/dashboard", authMiddleware.noCurrentUser, (req, res, next) => {
 //Search Bar get
 router.post("/search", (req, res, next) => {
   searchinput = req.body.search;
+  console.log("I am the body!",req.body)
   axios({
     url: `https://api-v3.igdb.com/games?search=${searchinput}&fields=cover.image_id,name&expand=cover&filter[version_parent][not_exists]=1&limit=50`,
     method: "GET",
@@ -194,5 +195,9 @@ router.post("/search", (req, res, next) => {
       console.error(err);
     });
 });
+
+router.get('/searchmob', (req, res, next) => {
+  res.render("searchmob")
+})
 
 module.exports = router;

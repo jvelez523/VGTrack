@@ -5,7 +5,7 @@ const cookieParser = require('cookie-parser');
 var authMiddleware = require("./authMiddleware");
 
 router.post("/signup", (req, res, next) => {
-  //console.log(req.body)
+  console.log("------------------------------ ",req.body)
 
   let { email, uid, displayName, photoURL } = req.body.user;
   User.create({ email, uid, displayName, photoURL }).then(user => {
@@ -29,6 +29,7 @@ router.post("/signup", (req, res, next) => {
 });
 
 router.post("/user", (req, res, next) => {
+  console.log("Post has begun ===============", req)
 let userId = req.body.user.uid;
   User.findOne({uid : userId}).then(user => {
     console.log(user)
