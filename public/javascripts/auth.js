@@ -134,22 +134,14 @@ firebase.auth().onAuthStateChanged(function(user) {
     </form>`;
     $(".dropdown-trigger").dropdown();
 
-
     document.querySelector(".logbutton").style.display = "none"
     let sidenavloggedin = document.querySelector(".sidenav")
     sidenavloggedin.innerHTML = `  
     <li><a href="/"><i class="small material-icons">home</i>Home</a></li>
     <li><a href="/explore"><i class="small material-icons">explore</i>Explore</a></li>
     <li><a href="/dashboard"><i class="small material-icons">dashboard</i>Dashboard</a></li>
-    <li><form class="logform" action="logout" method="POST"><button onclick="this.parentNode.submit()" href="#!" id="logoutmob" class="logoutmobile btn-small platbut logbut">Log Out</button></form></li>
-
-    <script>
-    document.querySelector("#logoutmob").addEventListener("click", e => {
-      axios.post("/logout");
-    });
-      </script>
   `
-    // ...
+    // <li><form class="logform" action="logout" method="POST"><button onclick="this.parentNode.submit()" href="#!" id="logoutmob" class="logoutmobile btn-small platbut logbut">Log Out</button></form></li>
   } else {
     console.log("User is signed out");
     // User is signed out.
