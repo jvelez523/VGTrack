@@ -7,8 +7,15 @@ const userSchema = new Schema({
   displayName: String,
   uid: String,
   email: String,
-  favoritegames: Array,
-  profileimg: { type: String, default: '/image/defaultprofile.png' },
+  wtpgames: [{type: mongoose.Schema.Types.ObjectId,
+    ref: 'glist'}],
+  playing: [{type: mongoose.Schema.Types.ObjectId,
+    ref: 'glist'}],
+  beaten: [{type: mongoose.Schema.Types.ObjectId,
+    ref: 'glist'}],
+  backlog: [{type: mongoose.Schema.Types.ObjectId,
+    ref: 'glist'}],
+  photoURL: { type: String, default: '/image/defaultprofile.png' },
   
 }, {
   timestamps: true

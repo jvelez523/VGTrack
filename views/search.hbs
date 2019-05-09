@@ -1,0 +1,21 @@
+<div class="container">
+<div class="explorepop titletext">
+    <h1>Results</h1>
+  </div>
+  <div class="row popgame">
+    {{#each game}}
+    <div class="col s6 m3">
+      <div class="card cardimg homegame srchimg">
+        <div class="card-image">
+          <img src="https://images.igdb.com/igdb/image/upload/t_cover_big_2x/{{this.cover.image_id}}.jpg">
+          <a href="/gamepage?game_id={{this.id}}">
+          <div class="overlay">
+            <div class="text">{{this.name}}</div>
+          </div>
+          </a>
+        </div>
+      </div>
+    </div>
+    {{/each}}
+  </div>
+  </div>

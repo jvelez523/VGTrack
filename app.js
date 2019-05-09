@@ -30,7 +30,9 @@ firebase.initializeApp(firebaseconfig);
 
 
 mongoose
-  .connect('mongodb://localhost/gametrack', {useNewUrlParser: true})
+  //.connect('mongodb://localhost/gametrack', {useNewUrlParser: true})
+  .connect('mongodb+srv://justin:ironhack@vgtrack-u5i2p.mongodb.net/test?retryWrites=true', {useNewUrlParser: true})
+  //mongodb+srv://justin:<password>@vgtrack-u5i2p.mongodb.net/test?retryWrites=true
   .then(x => {
     console.log(`Connected to Mongo! Database name: "${x.connections[0].name}"`)
   })

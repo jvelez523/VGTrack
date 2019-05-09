@@ -1,11 +1,13 @@
 <div class="pagehead"
   style="background-image: url(https://images.igdb.com/igdb/image/upload/t_1080p/{{game.screenshots.0.image_id}}.jpg)">
-  <h1>{{game.name}}</h1>
 </div>
 <div class="container">
   <div class="gamecov">
     <img class="gameimg z-depth-3"
       src="https://images.igdb.com/igdb/image/upload/t_cover_big_2x/{{game.cover.image_id}}.jpg">
+  </div>
+  <div class="gametitle">
+  <h1>{{game.name}}</h1>
   </div>
   <div class="platformmark row">
     {{#each game.platforms}}
@@ -45,4 +47,34 @@
       {{/each}}
     </div>
   </div>
+
+
+  <div class="fixed-action-btn actbtn">
+  <a class="btn-floating btn-large red">
+    <i class="large material-icons">library_add</i>
+  </a>
+  <ul>
+    <li><a class="btn-floating red dobtn" id="wtp">Want to Play</a></li>
+    <li><a class="btn-floating yellow darken-1 dobtn" id="playing">Playing</a></li>
+    <li><a class="btn-floating green dobtn" id="beaten">Beaten</a></li>
+    <li><a class="btn-floating blue dobtn" id="backlog">Backlog</a></li>
+  </ul>
 </div>
+</div>
+
+
+<script>
+  document.getElementById("wtp").addEventListener("click", () => {
+    axios.post("{{game.id}}/wtp").then(e => {console.log(e)})
+  })
+  document.getElementById("playing").addEventListener("click", () => {
+    axios.post("{{game.id}}/playing").then(e => {console.log(e)})
+  })
+  document.getElementById("beaten").addEventListener("click", () => {
+    axios.post("{{game.id}}/beaten").then(e => {console.log(e)})
+  })
+
+  document.getElementById("backlog").addEventListener("click", () => {
+    axios.post("{{game.id}}/backlog").then(e => {console.log(e)})
+  })
+</script>

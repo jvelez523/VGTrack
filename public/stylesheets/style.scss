@@ -2,19 +2,18 @@ body {
   /*padding: 50px;*/
   /*font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;*/
   background-color: #13171b;
-  font-family: 'Oswald', sans-serif;
+  font-family: "Oswald", sans-serif;
 }
 
 i.medium.material-icons {
   font-size: 4rem;
 }
 
-
 /*<----------------Navbar CSS Start----------------->*/
 nav {
   background-color: #ee6e7300 !important;
   -webkit-box-shadow: none;
-	-moz-box-shadow: none;
+  -moz-box-shadow: none;
   box-shadow: none;
   margin-top: 20px;
 }
@@ -37,7 +36,8 @@ nav .brand-logo {
   font-size: 2.5rem;
 }
 
-.nav-wrapper .input-field input[type=search], nav form {
+.nav-wrapper .input-field input[type="search"],
+nav form {
   display: inline-flex;
 }
 
@@ -48,27 +48,28 @@ nav .btn {
 }
 
 nav .btn:hover {
-  background-color: #1FB01F;
+  background-color: #1fb01f;
   border: none;
 }
 
 input#search {
-  padding: .5rem;
+  padding: 0.5rem;
   background-color: #ffffff33;
   border-radius: 30px;
   text-indent: 35px;
   color: white;
-  transition: border .4s ease-in;
+  transition: border 0.4s ease-in;
 }
 
-input#search:hover, input#search:active {
+input#search:hover,
+input#search:active {
   border: 1px solid white;
 }
 
-@media (min-width:961px) {
+@media (min-width: 961px) {
   nav .brand-logo.center {
     font-size: 4rem;
-}
+  }
   .homegame .card-image img {
     height: 330.9px;
   }
@@ -78,16 +79,17 @@ input#search:hover, input#search:active {
   }
 }
 
-@media (max-width : 411px) {
+@media (max-width: 411px) {
   .expl .card-image img {
     height: 122px !important;
   }
+
+  .srchimg .card-image img {
+    height: 165px !important;
+  }
 }
 
-
 /*<----------------Navbar CSS End----------------->*/
-
-
 
 /*<----------------Header CSS Start----------------->*/
 .header {
@@ -105,18 +107,69 @@ input#search:hover, input#search:active {
 
 .headeroverlay::before {
   content: "";
-    display: block;
-    position: absolute;
-    z-index: 0;
-    pointer-events: none;
-    width: 100%;
-    top: 0;
-    left: 50%;
-    -webkit-transform: translateX(-50%);
-    transform: translateX(-50%);
-    height: 775px;
-    background-repeat: no-repeat;
-    background-image: linear-gradient(90deg,#14181d 0,rgba(20,24,29,.98556487) .97%,rgba(20,24,29,.9451312) 2.07833333%,rgba(20,24,29,.88300656) 3.29666667%,rgba(20,24,29,.80349854) 4.60166667%,rgba(20,24,29,.71091472) 5.96666667%,rgba(20,24,29,.60956268) 7.365%,rgba(20,24,29,.50375) 8.77166667%,rgba(20,24,29,.39778426) 10.16%,rgba(20,24,29,.29597303) 11.505%,rgba(20,24,29,.20262391) 12.78%,rgba(20,24,29,.12204446) 13.95833333%,rgba(20,24,29,.05854227) 15.01666667%,rgba(20,24,29,.01642493) 15.92833333%,rgba(20,24,29,0) 16.66666667%,rgba(20,24,29,0) 83.33333333%,rgba(20,24,29,.01642493) 84.07166667%,rgba(20,24,29,.05854227) 84.98333333%,rgba(20,24,29,.12204446) 86.04166667%,rgba(20,24,29,.20262391) 87.22%,rgba(20,24,29,.29597303) 88.495%,rgba(20,24,29,.39778426) 89.84%,rgba(20,24,29,.50375) 91.22833333%,rgba(20,24,29,.60956268) 92.635%,rgba(20,24,29,.71091472) 94.03333333%,rgba(20,24,29,.80349854) 95.39833333%,rgba(20,24,29,.88300656) 96.70333333%,rgba(20,24,29,.9451312) 97.92166667%,rgba(20,24,29,.98556487) 99.03%,#14181d),linear-gradient(0deg,#14181d 0,#14181d 21.48148148%,rgba(20,24,29,.98556487) 23.63703704%,rgba(20,24,29,.9451312) 26.1%,rgba(20,24,29,.88300656) 28.80740741%,rgba(20,24,29,.80349854) 31.70740741%,rgba(20,24,29,.71091472) 34.74074074%,rgba(20,24,29,.60956268) 37.84814815%,rgba(20,24,29,.50375) 40.97407407%,rgba(20,24,29,.39778426) 44.05925926%,rgba(20,24,29,.29597303) 47.04814815%,rgba(20,24,29,.20262391) 49.88148148%,rgba(20,24,29,.12204446) 52.5%,rgba(20,24,29,.05854227) 54.85185185%,rgba(20,24,29,.01642493) 56.87777778%,rgba(20,24,29,0) 58.51851852%);
+  display: block;
+  position: absolute;
+  z-index: 0;
+  pointer-events: none;
+  width: 100%;
+  top: 0;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+  transform: translateX(-50%);
+  height: 775px;
+  background-repeat: no-repeat;
+  background-image: linear-gradient(
+      90deg,
+      #14181d 0,
+      rgba(20, 24, 29, 0.98556487) 0.97%,
+      rgba(20, 24, 29, 0.9451312) 2.07833333%,
+      rgba(20, 24, 29, 0.88300656) 3.29666667%,
+      rgba(20, 24, 29, 0.80349854) 4.60166667%,
+      rgba(20, 24, 29, 0.71091472) 5.96666667%,
+      rgba(20, 24, 29, 0.60956268) 7.365%,
+      rgba(20, 24, 29, 0.50375) 8.77166667%,
+      rgba(20, 24, 29, 0.39778426) 10.16%,
+      rgba(20, 24, 29, 0.29597303) 11.505%,
+      rgba(20, 24, 29, 0.20262391) 12.78%,
+      rgba(20, 24, 29, 0.12204446) 13.95833333%,
+      rgba(20, 24, 29, 0.05854227) 15.01666667%,
+      rgba(20, 24, 29, 0.01642493) 15.92833333%,
+      rgba(20, 24, 29, 0) 16.66666667%,
+      rgba(20, 24, 29, 0) 83.33333333%,
+      rgba(20, 24, 29, 0.01642493) 84.07166667%,
+      rgba(20, 24, 29, 0.05854227) 84.98333333%,
+      rgba(20, 24, 29, 0.12204446) 86.04166667%,
+      rgba(20, 24, 29, 0.20262391) 87.22%,
+      rgba(20, 24, 29, 0.29597303) 88.495%,
+      rgba(20, 24, 29, 0.39778426) 89.84%,
+      rgba(20, 24, 29, 0.50375) 91.22833333%,
+      rgba(20, 24, 29, 0.60956268) 92.635%,
+      rgba(20, 24, 29, 0.71091472) 94.03333333%,
+      rgba(20, 24, 29, 0.80349854) 95.39833333%,
+      rgba(20, 24, 29, 0.88300656) 96.70333333%,
+      rgba(20, 24, 29, 0.9451312) 97.92166667%,
+      rgba(20, 24, 29, 0.98556487) 99.03%,
+      #14181d
+    ),
+    linear-gradient(
+      0deg,
+      #14181d 0,
+      #14181d 21.48148148%,
+      rgba(20, 24, 29, 0.98556487) 23.63703704%,
+      rgba(20, 24, 29, 0.9451312) 26.1%,
+      rgba(20, 24, 29, 0.88300656) 28.80740741%,
+      rgba(20, 24, 29, 0.80349854) 31.70740741%,
+      rgba(20, 24, 29, 0.71091472) 34.74074074%,
+      rgba(20, 24, 29, 0.60956268) 37.84814815%,
+      rgba(20, 24, 29, 0.50375) 40.97407407%,
+      rgba(20, 24, 29, 0.39778426) 44.05925926%,
+      rgba(20, 24, 29, 0.29597303) 47.04814815%,
+      rgba(20, 24, 29, 0.20262391) 49.88148148%,
+      rgba(20, 24, 29, 0.12204446) 52.5%,
+      rgba(20, 24, 29, 0.05854227) 54.85185185%,
+      rgba(20, 24, 29, 0.01642493) 56.87777778%,
+      rgba(20, 24, 29, 0) 58.51851852%
+    );
 }
 
 .content {
@@ -129,18 +182,17 @@ input#search:hover, input#search:active {
 
 /*<----------------Card CSS Start----------------->*/
 
-
 .cardshold {
   margin: 50px 0px;
 }
 
-.homegame .card-image img{
-  border-radius: 5px
+.homegame .card-image img {
+  border-radius: 5px;
 }
 
 .homegame {
   border-radius: 5px;
-  background-color: #fff0
+  background-color: #fff0;
 }
 
 .card-panel {
@@ -170,35 +222,34 @@ input#search:hover, input#search:active {
 /*<----------------Footer CSS Start----------------->*/
 
 .page-footer {
-  background-color: #2B343F;
+  background-color: #2b343f;
 }
 
 /*<----------------Footer CSS End----------------->*/
 
 /*<----------------Modal CSS Start----------------->*/
 
-
 .modal {
-max-height:100%;
-overflow:hidden;
-padding: 40px;
-border-radius: 10px;
+  max-height: 100%;
+  overflow: hidden;
+  padding: 40px;
+  border-radius: 10px;
 }
 
-input[type="submit"]{
+input[type="submit"] {
   width: 200px;
- margin-top: 10px;
+  margin-top: 10px;
 }
-.modal-close{
- position: absolute;
- top:10px;
- right:10px;
- padding:0;
- margin:0;
+.modal-close {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  padding: 0;
+  margin: 0;
 }
 
 .lisub {
-  background-color: #1FB01F;
+  background-color: #1fb01f;
 }
 
 .loginbtn {
@@ -206,7 +257,6 @@ input[type="submit"]{
   margin: 5px 0px;
 }
 /*<----------------Modal CSS End----------------->*/
-
 
 /*<----------------Explore CSS Start----------------->*/
 
@@ -216,28 +266,26 @@ input[type="submit"]{
   padding: 50px 0px;
 }
 
-
-
 .pagehead {
-    text-align: center;
-    color: white;
-    padding: 50px 0px;
-    background-image: url(https://stmed.net/sites/default/files/the-legend-of-zelda%3A-breath-of-the-wild-hd-wallpapers-33783-8252657.jpg);
-    background-size: cover;
-    background-position: center;
-    position: absolute;
-    top: 0;
-    width: 100%;
-    height: 650px;
-    padding-top : 180px;
-    box-shadow: inset 0 0 0 1000px rgba(0,0,0,.2);
-    z-index: -1;
+  text-align: center;
+  color: white;
+  padding: 50px 0px;
+  background-image: url(https://stmed.net/sites/default/files/the-legend-of-zelda%3A-breath-of-the-wild-hd-wallpapers-33783-8252657.jpg);
+  background-size: cover;
+  background-position: center;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 650px;
+  padding-top: 180px;
+  box-shadow: inset 0 0 0 1000px rgba(0, 0, 0, 0.2);
+  z-index: -1;
+  background-attachment: fixed;
 }
 
 .explorecont {
   padding-top: 600px;
 }
-
 
 /*Image Overlay CSS*/
 .overlay {
@@ -249,7 +297,7 @@ input[type="submit"]{
   height: 100%;
   width: 100%;
   opacity: 0;
-  transition: .5s ease;
+  transition: 0.5s ease;
   background-color: #12161aa6;
 }
 
@@ -268,10 +316,21 @@ input[type="submit"]{
   transform: translate(-50%, -50%);
   text-align: center;
 }
+
+.actbtn {
+  right: 100px !important;
+}
+
+.dobtn {
+  width: 130px;
+  border-radius: 5%;
+  left: -85px
+}
+
+
 /*----------*/
 
 /*<----------------Explore CSS End----------------->*/
-
 
 .pagehead::before {
   content: "";
@@ -286,11 +345,59 @@ input[type="submit"]{
   transform: translateX(-50%);
   height: 775px;
   background-repeat: no-repeat;
-  background-image: linear-gradient(90deg, #14181d 0, rgba(20, 24, 29, 0.985565) 0.97%, rgba(20, 24, 29, 0.945131) 2.07833%, rgba(20, 24, 29, 0.883007) 3.29667%, rgba(20, 24, 29, 0.803499) 4.60167%, rgba(20, 24, 29, 0.710915) 5.96667%, rgba(20, 24, 29, 0.609563) 7.365%, rgba(20, 24, 29, 0.50375) 8.77167%, rgba(20, 24, 29, 0.397784) 10.16%, rgba(20, 24, 29, 0.295973) 11.505%, rgba(20, 24, 29, 0.202624) 12.78%, rgba(20, 24, 29, 0.122044) 13.95833%, rgba(20, 24, 29, 0.0585423) 15.01667%, rgba(20, 24, 29, 0.0164249) 15.92833%, rgba(20, 24, 29, 0) 16.66667%, rgba(20, 24, 29, 0) 83.33333%, rgba(20, 24, 29, 0.0164249) 84.07167%, rgba(20, 24, 29, 0.0585423) 84.98333%, rgba(20, 24, 29, 0.122044) 86.04167%, rgba(20, 24, 29, 0.202624) 87.22%, rgba(20, 24, 29, 0.295973) 88.495%, rgba(20, 24, 29, 0.397784) 89.84%, rgba(20, 24, 29, 0.50375) 91.22833%, rgba(20, 24, 29, 0.609563) 92.635%, rgba(20, 24, 29, 0.710915) 94.03333%, rgba(20, 24, 29, 0.803499) 95.39833%, rgba(20, 24, 29, 0.883007) 96.70333%, rgba(20, 24, 29, 0.945131) 97.92167%, rgba(20, 24, 29, 0.985565) 99.03%, #14181d), linear-gradient(0deg, #14181d 0, #14181d 21.48148%, rgba(20, 24, 29, 0.985565) 23.63704%, rgba(20, 24, 29, 0.945131) 26.1%, rgba(20, 24, 29, 0.883007) 28.80741%, rgba(20, 24, 29, 0.803499) 31.70741%, rgba(20, 24, 29, 0.710915) 34.74074%, rgba(20, 24, 29, 0.609563) 37.84815%, rgba(20, 24, 29, 0.50375) 40.97407%, rgba(20, 24, 29, 0.397784) 44.05926%, rgba(20, 24, 29, 0.295973) 47.04815%, rgba(20, 24, 29, 0.202624) 49.88148%, rgba(20, 24, 29, 0.122044) 52.5%, rgba(20, 24, 29, 0.0585423) 54.85185%, rgba(20, 24, 29, 0.0164249) 56.87778%, rgba(20, 24, 29, 0) 58.51852%);
+  background-image: linear-gradient(
+      90deg,
+      #14181d 0,
+      rgba(20, 24, 29, 0.985565) 0.97%,
+      rgba(20, 24, 29, 0.945131) 2.07833%,
+      rgba(20, 24, 29, 0.883007) 3.29667%,
+      rgba(20, 24, 29, 0.803499) 4.60167%,
+      rgba(20, 24, 29, 0.710915) 5.96667%,
+      rgba(20, 24, 29, 0.609563) 7.365%,
+      rgba(20, 24, 29, 0.50375) 8.77167%,
+      rgba(20, 24, 29, 0.397784) 10.16%,
+      rgba(20, 24, 29, 0.295973) 11.505%,
+      rgba(20, 24, 29, 0.202624) 12.78%,
+      rgba(20, 24, 29, 0.122044) 13.95833%,
+      rgba(20, 24, 29, 0.0585423) 15.01667%,
+      rgba(20, 24, 29, 0.0164249) 15.92833%,
+      rgba(20, 24, 29, 0) 16.66667%,
+      rgba(20, 24, 29, 0) 83.33333%,
+      rgba(20, 24, 29, 0.0164249) 84.07167%,
+      rgba(20, 24, 29, 0.0585423) 84.98333%,
+      rgba(20, 24, 29, 0.122044) 86.04167%,
+      rgba(20, 24, 29, 0.202624) 87.22%,
+      rgba(20, 24, 29, 0.295973) 88.495%,
+      rgba(20, 24, 29, 0.397784) 89.84%,
+      rgba(20, 24, 29, 0.50375) 91.22833%,
+      rgba(20, 24, 29, 0.609563) 92.635%,
+      rgba(20, 24, 29, 0.710915) 94.03333%,
+      rgba(20, 24, 29, 0.803499) 95.39833%,
+      rgba(20, 24, 29, 0.883007) 96.70333%,
+      rgba(20, 24, 29, 0.945131) 97.92167%,
+      rgba(20, 24, 29, 0.985565) 99.03%,
+      #14181d
+    ),
+    linear-gradient(
+      0deg,
+      #14181d 0,
+      #14181d 21.48148%,
+      rgba(20, 24, 29, 0.985565) 23.63704%,
+      rgba(20, 24, 29, 0.945131) 26.1%,
+      rgba(20, 24, 29, 0.883007) 28.80741%,
+      rgba(20, 24, 29, 0.803499) 31.70741%,
+      rgba(20, 24, 29, 0.710915) 34.74074%,
+      rgba(20, 24, 29, 0.609563) 37.84815%,
+      rgba(20, 24, 29, 0.50375) 40.97407%,
+      rgba(20, 24, 29, 0.397784) 44.05926%,
+      rgba(20, 24, 29, 0.295973) 47.04815%,
+      rgba(20, 24, 29, 0.202624) 49.88148%,
+      rgba(20, 24, 29, 0.122044) 52.5%,
+      rgba(20, 24, 29, 0.0585423) 54.85185%,
+      rgba(20, 24, 29, 0.0164249) 56.87778%,
+      rgba(20, 24, 29, 0) 58.51852%
+    );
 }
-
-
-
 
 /*<----------------Game Page----------------->*/
 .gameimg {
@@ -299,10 +406,9 @@ input[type="submit"]{
   height: auto;
 }
 
-
 .gamecov {
-    text-align: center;
-    padding-top: 350px;
+  text-align: center;
+  padding-top: 250px;
 }
 
 .desctext {
@@ -317,7 +423,7 @@ input[type="submit"]{
 
 .platbut {
   background-color: transparent;
-  border: 1px solid #1FB01F;
+  border: 1px solid #1fb01f;
   border-radius: 20px;
   margin: 10px;
 }
@@ -330,6 +436,11 @@ input[type="submit"]{
   text-align: center;
 }
 
+.gametitle {
+  text-align: center;
+  color: white;
+}
+
 /*<----------------Game Page----------------->*/
 
 /*<----------------Dashboard Page----------------->*/
@@ -340,11 +451,11 @@ input[type="submit"]{
   //margin-top: 50px;
   margin-bottom: 50px;
   border-radius: 10px;
-  background-color: #303C48
+  background-color: #303c48;
 }
 
 .tabs .tab a {
-  color: #99AABB;
+  color: #99aabb;
 }
 
 .dashHeader {
@@ -360,3 +471,25 @@ input[type="submit"]{
 .favcol {
   min-height: 400px;
 }
+
+.dashcontent {
+  margin-top: 300px
+}
+
+.editbtn {
+  height: 50px;
+}
+
+@media (min-width: 961px) {
+.editbtn {
+  position: relative;
+  bottom: 20px;
+}
+}
+
+.minusbtn {
+  position: absolute;
+  bottom: 10px;
+  right: 5px;
+}
+

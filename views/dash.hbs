@@ -1,80 +1,92 @@
-<div class="container">
+<div class="pagehead" style="background-image: url(http://i.imgur.com/He6od5o.jpg)">
+  <h1 class="Header">Dashboard</h1>
+</div>
+<div class="container dashcontent">
   <div class="dashHeader">
-    <span><img src="/images/defaultprofile.png" class="circle responsive-img profiledash"></span>
-    <h3>Hello, User</h3>
+    <span><img src={{currentUser.photoURL}} class="circle responsive-img profiledash z-depth-3"></span>
+    <h3>Hello, {{currentUser.displayName}}</h3>
   </div>
   <ul id="dashTabs" class="tabs">
     <li class="tab col s3"><a href="#swipe-1">Want to Play</a></li>
     <li class="tab col s3"><a class="active" href="#swipe-2">Playing</a></li>
     <li class="tab col s3"><a href="#swipe-3">Beaten</a></li>
     <li class="tab col s3"><a href="#swipe-4">Backlog</a></li>
+    <li class="tab col s3"><button class="btn-small editbtn red waves-effect waves-light">Edit</button></li>
   </ul>
-  <div id="swipe-1" class="col s12 blue favcol">
+  <div id="swipe-1" class="col s12 transparent favcol">
     <div class="row popgame">
-      {{#each popgame}}
+      {{#each wtp}}
       <div class="col s4 m3">
         <div class="card cardimg homegame expl">
           <div class="card-image">
-            <img src="https://images.igdb.com/igdb/image/upload/t_cover_big_2x/{{this.cover.image_id}}.jpg">
+            <img src="https://images.igdb.com/igdb/image/upload/t_cover_big_2x/{{cover.image_id}}.jpg">
             <a href="/gamepage?game_id={{this.id}}">
               <div class="overlay">
                 <div class="text">{{this.name}}</div>
               </div>
             </a>
+            <a class="btn-floating btn-small waves-effect waves-light red minusbtn scale-transition scale-out"><i
+                class="material-icons">remove</i></a>
           </div>
         </div>
       </div>
       {{/each}}
     </div>
   </div>
-  <div id="swipe-2" class="col s12 red favcol">
+  <div id="swipe-2" class="col s12 transparent favcol">
     <div class="row popgame">
-      {{#each popgame}}
+      {{#each playing}}
       <div class="col s4 m3">
         <div class="card cardimg homegame expl">
           <div class="card-image">
-            <img src="https://images.igdb.com/igdb/image/upload/t_cover_big_2x/{{this.cover.image_id}}.jpg">
+            <img src="https://images.igdb.com/igdb/image/upload/t_cover_big_2x/{{cover.image_id}}.jpg">
             <a href="/gamepage?game_id={{this.id}}">
               <div class="overlay">
                 <div class="text">{{this.name}}</div>
               </div>
             </a>
+            <a class="btn-floating btn-small waves-effect waves-light red minusbtn scale-transition scale-out"><i
+                class="material-icons">remove</i></a>
           </div>
         </div>
       </div>
       {{/each}}
     </div>
   </div>
-  <div id="swipe-3" class="col s12 green favcol">
+  <div id="swipe-3" class="col s12 transparent favcol">
     <div class="row popgame">
-      {{#each popgame}}
+      {{#each beaten}}
       <div class="col s4 m3">
         <div class="card cardimg homegame expl">
           <div class="card-image">
-            <img src="https://images.igdb.com/igdb/image/upload/t_cover_big_2x/{{this.cover.image_id}}.jpg">
+            <img src="https://images.igdb.com/igdb/image/upload/t_cover_big_2x/{{cover.image_id}}.jpg">
             <a href="/gamepage?game_id={{this.id}}">
               <div class="overlay">
                 <div class="text">{{this.name}}</div>
               </div>
             </a>
+            <a class="btn-floating btn-small waves-effect waves-light red minusbtn scale-transition scale-out"><i
+                class="material-icons">remove</i></a>
           </div>
         </div>
       </div>
       {{/each}}
     </div>
   </div>
-  <div id="swipe-4" class="col s12 orange favcol">
+  <div id="swipe-4" class="col s12 transparent favcol">
     <div class="row popgame">
-      {{#each popgame}}
+      {{#each backlog}}
       <div class="col s4 m3">
         <div class="card cardimg homegame expl">
           <div class="card-image">
-            <img src="https://images.igdb.com/igdb/image/upload/t_cover_big_2x/{{this.cover.image_id}}.jpg">
+            <img src="https://images.igdb.com/igdb/image/upload/t_cover_big_2x/{{cover.image_id}}.jpg">
             <a href="/gamepage?game_id={{this.id}}">
               <div class="overlay">
                 <div class="text">{{this.name}}</div>
               </div>
             </a>
+            <a class="btn-floating btn-small waves-effect waves-light red minusbtn scale-transition scale-out"><i
+                class="material-icons">remove</i></a>
           </div>
         </div>
       </div>

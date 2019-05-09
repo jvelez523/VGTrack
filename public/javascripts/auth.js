@@ -18,25 +18,25 @@ firebase.initializeApp(firebaseconfig);
 document.querySelector("#emailsignin").addEventListener("click", () => {
   let email = document.querySelector("#email").value;
   let password = document.querySelector("#pass").value;
-  let name = document.querySelector("#username").value
+  let name = document.querySelector("#username").value;
   firebase
     .auth()
     .createUserWithEmailAndPassword(email, password)
     .then(user => {
       var user = firebase.auth().currentUser;
 
-  
-      if(result.additionalUserInfo.isNewUser){
+      if (result.additionalUserInfo.isNewUser) {
         user.updateProfile({
           displayName: name
         });
-        axios.post("/signup",result)
-        .then((user) => {
-          console.log(user)
-        })
-        .catch(err => {
-          console.log(err)
-        })
+        axios
+          .post("/signup", result)
+          .then(user => {
+            console.log(user);
+          })
+          .catch(err => {
+            console.log(err);
+          });
       }
       //location.reload();
       console.log("User has logged in", user);
@@ -55,15 +55,27 @@ document.querySelector("#googlesignin").addEventListener("click", () => {
     .auth()
     .signInWithPopup(googleProvider)
     .then(result => {
+
       if(result.additionalUserInfo.isNewUser){
-      axios.post("/signup",result)
-      .then((user) => {
-        console.log(user)
-      })
-      .catch(err => {
-        console.log(err)
-      })
-    }
+      axios
+        .post("/signup", result)
+        .then(user => {
+          console.log(user);
+          axios
+          .post("/user", { user: result.user })
+          .then(res => console.log(res))
+          .catch(err => console.error(err));
+        })
+        .catch(err => {
+          console.log(err);
+        });
+      }
+      else {
+        axios
+          .post("/user", { user: result.user })
+          .then(res => console.log(res))
+          .catch(err => console.error(err));
+      }
       console.log("user has logged in", result);
     });
 });
@@ -73,14 +85,25 @@ document.querySelector("#facebooksignin").addEventListener("click", () => {
     .auth()
     .signInWithPopup(facebookProvider)
     .then(result => {
-      if(result.additionalUserInfo.isNewUser){
-        axios.post("/signup",result)
-        .then((user) => {
-          console.log(user)
-        })
-        .catch(err => {
-          console.log(err)
-        })
+      if (result.additionalUserInfo.isNewUser) {
+        axios
+          .post("/signup", result)
+          .then(user => {
+            console.log(user);
+            axios
+          .post("/user", { user: result.user })
+          .then(res => console.log(res))
+          .catch(err => console.error(err));
+          })
+          .catch(err => {
+            console.log(err);
+          });
+      }
+      else {
+        axios
+          .post("/user", { user: result.user })
+          .then(res => console.log(res))
+          .catch(err => console.error(err));
       }
       console.log("user has logged in", result);
     });
@@ -103,14 +126,20 @@ firebase.auth().onAuthStateChanged(function(user) {
     let userloggedin = document.querySelector(".rightnav");
     userloggedin.innerHTML = `<li><a class="dropdown-trigger" href="#!" data-target="dropdown">Hi, ${displayName}<i class="material-icons right">arrow_drop_down</i></a></li>
 
-    <form>
+    <form action="/search" method="post">
       <div class="input-field">
-        <input id="search" type="search" required="">
+        <input id="search" type="search" required="" name="search">
         <label class="label-icon" for="search"><i class="material-icons">search</i></label>
       </div>
     </form>`;
     $(".dropdown-trigger").dropdown();
 
+    let sidenavloggedin = document.querySelector(".sidenav")
+    sidenavloggedin.innerHTML = `  
+    <li><a href="/"><i class="small material-icons">home</i>Home</a></li>
+    <li><a href="/explore"><i class="small material-icons">explore</i>Explore</a></li>
+    <li><a href="/dashboard"><i class="small material-icons">dashboard</i>Dashboard</a></li>
+  `
     // ...
   } else {
     console.log("User is signed out");
