@@ -127,9 +127,62 @@ router.post("/:id/backlog", (req,res,next)=> {
 })
 
 
-//Deletion Post Route
-router.post("/:id/delete", (req,res,next)=> {
 
+
+//=============
+//Deletion Routes
+//=============
+
+//Played Deletion Post Route
+router.get("/delete/:_id", (req,res,next)=> {
+  gameid = req.params._id
+  User.findById(req.cookies.currentuser._id).then(user=>{
+    glist.findByIdAndDelete(gameid).then((game) => {
+      user.playing.splice(user.playing.indexOf(game), 1);
+      user.save();
+      res.redirect('back');
+    })
+  })
+  console.log("This is the game id for GLIST =====>",req.params._id)
+})
+
+//Played Deletion Post Route
+router.get("/deletewtp/:_id", (req,res,next)=> {
+  gameid = req.params._id
+  User.findById(req.cookies.currentuser._id).then(user=>{
+    glist.findByIdAndDelete(gameid).then((game) => {
+      user.wtpgames.splice(user.wtpgames.indexOf(game), 1);
+      user.save();
+      res.redirect('back');
+    })
+  })
+  console.log("This is the game id for GLIST =====>",req.params._id)
+})
+
+//Played Deletion Post Route
+router.get("/deletebeat/:_id", (req,res,next)=> {
+  gameid = req.params._id
+  User.findById(req.cookies.currentuser._id).then(user=>{
+    glist.findByIdAndDelete(gameid).then((game) => {
+      user.beaten.splice(user.beaten.indexOf(game), 1);
+      user.save();
+      res.redirect('back');
+    })
+  })
+  console.log("This is the game id for GLIST =====>",req.params._id)
+})
+
+//Played Deletion Post Route
+router.get("/deleteblog/:_id", (req,res,next)=> {
+  gameid = req.params._id
+  User.findById(req.cookies.currentuser._id).then(user=>{
+    glist.findByIdAndDelete(gameid).then((game) => {
+      user.backlog.splice(user.backlog.indexOf(game), 1);
+      user.save();
+      res.redirect('back');
+    })
+  })
+  console.log("This is the game id for GLIST =====>",req.params._id)
 })
 
 
