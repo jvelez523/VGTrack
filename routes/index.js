@@ -172,7 +172,7 @@ router.get("/dashboard", authMiddleware.noCurrentUser, (req, res, next) => {
     });
 
     Promise.all(promises).then(function(values) {
-      console.log(values)
+      console.log("This is the promise results", values)
       res.render("dash", {
         currentUser: req.cookies.currentuser,
         wtp: wtparr,
