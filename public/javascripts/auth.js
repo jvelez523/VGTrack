@@ -77,6 +77,8 @@ document.querySelector("#facebooksignin").addEventListener("click", () => {
 
 //When Logged in Functions
 firebase.auth().onAuthStateChanged(function(user) {
+  console.log('does this fire')
+  
   if (user) {
     console.log("the user info ----- ",user);
     
@@ -90,16 +92,18 @@ firebase.auth().onAuthStateChanged(function(user) {
     console.log(email, displayName);
 
     $(".modal").modal("close");
+    document.querySelector(".loginhome").innerHTML = `<li><a class="dropdown-trigger" href="#!" data-target="dropdown">Hi, ${displayName}<i class="material-icons right">arrow_drop_down</i></a></li>`
+ //   let userloggedin = document.querySelector(".rightnav");
+ //   userloggedin.innerHTML = `<li><a class="dropdown-trigger" href="#!" data-target="dropdown">Hi, ${displayName}<i class="material-icons right">arrow_drop_down</i></a></li>
+ //   <li><form action="/search" method="post">
+ //   <div class="input-field">
+ //     <input id="search" type="search" required>
+ //     <label class="label-icon" for="search"><i class="material-icons">search</i></label>
+ //   </div>
+ // </form></li>
+ //   `;
 
-    let userloggedin = document.querySelector(".rightnav");
-    userloggedin.innerHTML = `<li><a class="dropdown-trigger" href="#!" data-target="dropdown">Hi, ${displayName}<i class="material-icons right">arrow_drop_down</i></a></li>
-    <li><form action="/search" method="post">
-    <div class="input-field">
-      <input id="search" type="search" required>
-      <label class="label-icon" for="search"><i class="material-icons">search</i></label>
-    </div>
-  </form></li>
-    `;
+    //document.querySelector(".homelogin").html = `<li><a class="dropdown-trigger" href="#!" data-target="dropdown">Hi, ${displayName}<i class="material-icons right">arrow_drop_down</i></a></li>`
     $(".dropdown-trigger").dropdown();
 
     //document.querySelector(".logbutton").style.display = "none"

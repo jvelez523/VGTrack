@@ -33,10 +33,6 @@
       document.querySelector("#logout").addEventListener("click", e => {
         axios.post("/logout");
       });
-
-      document.querySelector("#logoutmob").addEventListener("click", e => {
-      axios.post("/logout");
-    });
     </script>
   </ul>
 
@@ -53,17 +49,20 @@
         <li><a href="/explore"><i class="small material-icons">explore</i>Explore</a></li>
       </ul>
       <ul id="nav-mobile" class="right hide-on-med-and-down rightnav">
-        <a class="waves-effect waves-light btn modal-trigger" href="#loginmodal"><i
-            class="material-icons left">person_outline</i>Log In</a>
+        <div class="loginhome">
+        <a class="waves-effect waves-light btn modal-trigger homelogin" href="#loginmodal"><i
+            class="material-icons left">person_outline</i>Log In</a></div>
 
         <form action="/search" method="post">
           <div class="input-field">
-            <input id="search" type="search" name="search" required>
+            <input id="search" type="search" name="search">
             <label class="label-icon" for="search"><i class="material-icons">search</i></label>
           </div>
         </form>
       </ul>
     </div>
+
+
   </nav>
 
 
@@ -78,6 +77,10 @@
 
 
   {{{body}}}
+
+
+
+
 
   <footer class="page-footer">
     <div class="container">

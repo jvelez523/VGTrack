@@ -146,7 +146,7 @@ router.get("/delete/:_id", (req,res,next)=> {
   console.log("This is the game id for GLIST =====>",req.params._id)
 })
 
-//Played Deletion Post Route
+//want to play Deletion Post Route
 router.get("/deletewtp/:_id", (req,res,next)=> {
   gameid = req.params._id
   User.findById(req.cookies.currentuser._id).then(user=>{
@@ -159,7 +159,7 @@ router.get("/deletewtp/:_id", (req,res,next)=> {
   console.log("This is the game id for GLIST =====>",req.params._id)
 })
 
-//Played Deletion Post Route
+//Beaten Deletion Post Route
 router.get("/deletebeat/:_id", (req,res,next)=> {
   gameid = req.params._id
   User.findById(req.cookies.currentuser._id).then(user=>{
@@ -172,7 +172,7 @@ router.get("/deletebeat/:_id", (req,res,next)=> {
   console.log("This is the game id for GLIST =====>",req.params._id)
 })
 
-//Played Deletion Post Route
+//Backlog Deletion Post Route
 router.get("/deleteblog/:_id", (req,res,next)=> {
   gameid = req.params._id
   User.findById(req.cookies.currentuser._id).then(user=>{

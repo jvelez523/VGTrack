@@ -25,7 +25,11 @@ router.get("/", (req, res, next) => {
     data: "fields name artworks;"
   })
     .then(response => {
-      res.render("index", { game: response.data });
+      if (req.cookies) {
+        currentUser = req.cookies.currentuser;
+      }
+      console.log(req.cookies, 1421454253)
+      res.render("index", { game: response.data, currentUser});
       console.log(response.data);
     })
     .catch(err => {
